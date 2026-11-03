@@ -34,6 +34,18 @@ npm run docs:build     # static build to docs/.vitepress/dist/
 npm run docs:preview   # serve the production build
 ```
 
-## Hosting
+## Hosting and versions
 
-Set **Settings → Pages → Build and deployment → Source → GitHub Actions**. `.github/workflows/deploy.yml` builds and deploys on every push to `main` (and via manual dispatch).
+Pages is deployed from GitHub Actions (**Settings → Pages → Source → GitHub Actions**). `.github/workflows/deploy.yml` runs on every push to `main` or `develop`, and when a release is published. It runs `scripts/build-site.sh`, which builds every version into one site:
+
+| URL | Source | Purpose |
+|---|---|---|
+| `/event-notifications/` | `main` | Current published version |
+| `/event-notifications/develop/` | `develop` | Draft preview of the next version (DRAFT banner, `noindex`) |
+| `/event-notifications/<tag>/` | every git tag | Archived versions |
+
+The **Version History** page (last entry in the left navigation) is generated at build time by `scripts/generate-history.mjs`; release descriptions come from the GitHub release notes for each tag.
+
+## Branching (GitOps)
+
+Work on `develop`; `main` is protected and requires a pull request with one approval (stale approvals are dismissed, the last pusher cannot approve their own push, admins included). To release: merge `develop` into `main` through a PR, then tag and publish a GitHub release named for the version.
