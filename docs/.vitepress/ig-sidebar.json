@@ -1,0 +1,136 @@
+[
+  {
+    "text": "About this Guide",
+    "link": "/00-about-this-document/",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "0.1 Legal Notices",
+        "link": "/00-about-this-document/0-1-legal-notices"
+      },
+      {
+        "text": "0.2 Consensus Body and Document Control",
+        "link": "/00-about-this-document/0-2-consensus-body-and-document-control"
+      },
+      {
+        "text": "0.3 Change Log",
+        "link": "/00-about-this-document/0-3-change-log"
+      }
+    ]
+  },
+  {
+    "text": "1 Overview",
+    "link": "/01-overview/",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "1.1 Direct Secure Messaging",
+        "link": "/01-overview/1-1-direct-secure-messaging"
+      },
+      {
+        "text": "1.2 The Need for a Standard",
+        "link": "/01-overview/1-2-the-need-for-a-standard"
+      },
+      {
+        "text": "1.3 Terms and Symbols",
+        "link": "/01-overview/1-3-terms-and-symbols"
+      },
+      {
+        "text": "1.4 Normative References",
+        "link": "/01-overview/1-4-normative-references"
+      }
+    ]
+  },
+  {
+    "text": "2 Scope",
+    "link": "/02-scope/",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "2.1 In Scope",
+        "link": "/02-scope/2-1-in-scope"
+      },
+      {
+        "text": "2.2 Out of Scope for the Guide",
+        "link": "/02-scope/2-2-out-of-scope-for-the-guide"
+      },
+      {
+        "text": "2.3 Scenarios",
+        "link": "/02-scope/2-3-scenarios"
+      },
+      {
+        "text": "2.4 Roles and Actors",
+        "link": "/02-scope/2-4-roles-and-actors"
+      }
+    ]
+  },
+  {
+    "text": "3 Use Cases",
+    "link": "/03-use-cases/",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "3.1 Two Business Actor Use Case",
+        "link": "/03-use-cases/3-1-two-business-actor-use-case"
+      },
+      {
+        "text": "3.2 Three (or more) Business Actor Use Case",
+        "link": "/03-use-cases/3-2-three-or-more-business-actor-use-case"
+      }
+    ]
+  },
+  {
+    "text": "4 Messaging Requirements",
+    "link": "/04-messaging-requirements/",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "4.1 Message Format and Payload",
+        "link": "/04-messaging-requirements/4-1-message-format-and-payload"
+      },
+      {
+        "text": "4.2 Context/Metadata Requirements",
+        "link": "/04-messaging-requirements/4-2-context-metadata-requirements"
+      },
+      {
+        "text": "4.3 Content Requirements",
+        "link": "/04-messaging-requirements/4-3-content-requirements"
+      },
+      {
+        "text": "4.4 Human Readable Content",
+        "link": "/04-messaging-requirements/4-4-human-readable-content"
+      }
+    ]
+  },
+  {
+    "text": "5 Value Sets and Examples",
+    "link": "/05-value-sets-and-examples/",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "5.1 Value Sets Used in this Implementation Guide",
+        "link": "/05-value-sets-and-examples/5-1-value-sets-used-in-this-implementation-guide"
+      },
+      {
+        "text": "5.2 Additional Optional Content Payloads",
+        "link": "/05-value-sets-and-examples/5-2-additional-optional-content-payloads"
+      },
+      {
+        "text": "5.3 Requirement Description from CMS Rule",
+        "link": "/05-value-sets-and-examples/5-3-requirement-description-from-cms-rule"
+      },
+      {
+        "text": "5.4 Data Elements in the Message Payload",
+        "link": "/05-value-sets-and-examples/5-4-data-elements-in-the-message-payload"
+      },
+      {
+        "text": "5.5 PD1 – Patient Additional Demographic",
+        "link": "/05-value-sets-and-examples/5-5-pd1-patient-additional-demographic"
+      },
+      {
+        "text": "5.6 Maternal Health Use Case",
+        "link": "/05-value-sets-and-examples/5-6-maternal-health-use-case"
+      }
+    ]
+  }
+]
