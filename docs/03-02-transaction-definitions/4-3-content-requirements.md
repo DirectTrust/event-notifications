@@ -85,6 +85,20 @@ The minimum requirements to comply with the CMS Interoperability and Patient Acc
 <p><em>Note: This code is available in http://terminology.hl7.org/CodeSystem/v2-0301 version 2.9.1</em></p></td>
 <td>R</td>
 </tr>
+</tbody>
+</table>
+
+### PID – Patient Identification
+
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 25%" />
+<col style="width: 31%" />
+<col style="width: 8%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
 <tr>
 <td><p><strong>Data</strong></p>
 <p><strong>Element Numbers</strong></p></td>
@@ -254,12 +268,24 @@ The minimum requirements to comply with the CMS Interoperability and Patient Acc
 <td style="text-align: center;"></td>
 <td>RE</td>
 </tr>
+</tbody>
+</table>
+
+### ROL – Role (Primary Care Provider)
+
+<table style="width:100%;">
+<colgroup>
+<col style="width: 99%" />
+</colgroup>
+<thead>
 <tr>
-<td style="text-align: center;"><p><strong>ROL Segment Usage</strong></p>
+<th style="text-align: center;"><p><strong>ROL Segment Usage</strong></p>
 <p>In HL7 Version 2 (V2) messages, such as the ADT (Admit, Discharge, Transfer) message, the ROL (Role) segment is used to convey information about roles or relationships between various entities involved in healthcare transactions. The ROL segment can appear multiple times within an ADT message.</p>
 <p>The order of the ROL segment in the message indicates the meaning and purpose of each ROL segment. The ROL segment that follows the PID segment or optional PD1 segment contains information about the Patient’s Primary Care Organization and Practitioner (PCP). The ROL segments that follow the PV1 and PV2 segments convey information about Care Organizations and Practitioners involved in the patient visit associated with this ADT.</p>
-<p>See Section <a href="#pv2-patient-visit-additional-information">4.3.2.7</a>.</p></td>
+<p>See Section <a href="#pv2-patient-visit-additional-information">4.3.2.7</a>.</p></th>
 </tr>
+</thead>
+<tbody>
 </tbody>
 </table>
 
