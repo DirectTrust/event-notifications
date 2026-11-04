@@ -262,11 +262,3 @@
     max-width: 1008px;
   }
 }
-
-
-/* Divider above the generated Version History entry at the bottom of the sidebar. */
-.VPSidebarItem:has(> .item > a[href$="/version-history"]) {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid var(--vp-c-divider);
-}

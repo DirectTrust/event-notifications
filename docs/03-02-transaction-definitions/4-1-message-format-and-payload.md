@@ -26,18 +26,18 @@ Both the [Context IG](https://directtrust.org/standards/the-direct-standard/cont
 
 Direct Secure Messages sent between HISPs under this IG will meet the following requirements:
 
-1)  Such messages SHALL contain Context Metadata as defined in Section [4.1](/04-messaging-requirements/4-1-message-format-and-payload#message-format-and-payload). Two options are allowed:
+1)  Such messages SHALL contain Context Metadata as defined in Section [4.1](/03-02-transaction-definitions/4-1-message-format-and-payload#message-format-and-payload). Two options are allowed:
 
     1.  [Context IG](https://directtrust.org/standards/the-direct-standard/context-versions) metadata SHALL be formatted in conformance with both [The Direct Standard®](https://directtrust.org/standards/the-direct-standard/versions) and the [Context IG](https://directtrust.org/standards/the-direct-standard/context-versions) and expressed with the Context MIME part of the message.
 
     2.  An XDM package formatted in compliance with the IHE ITI XDM Profile and [XDR and XDM for Direct Secure Messaging Specification](https://directtrust.org/standards/the-direct-standard/xdr-xdm-versions).
 
-2)  Messages SHALL contain **HL7 ADT messages based on HL7 version 2.5.1, where field MSH-12 SHALL contain “2.5.1”. In order to accommodate existing implementations of earlier HL7 versions, HL7 messages SHALL regardless contain** required and conditionally required data elements as defined in Section [4.2.1](/04-messaging-requirements/4-2-context-metadata-requirements#direct-ig-for-context-requirements).
+2)  Messages SHALL contain **HL7 ADT messages based on HL7 version 2.5.1, where field MSH-12 SHALL contain “2.5.1”. In order to accommodate existing implementations of earlier HL7 versions, HL7 messages SHALL regardless contain** required and conditionally required data elements as defined in Section [4.2.1](/03-02-transaction-definitions/4-2-context-metadata-requirements#direct-ig-for-context-requirements).
 
-3)  Messages SHALL contain **human readable text in the message body that contains the Event Notification information** with at a minimum the elements required by the Conditions of Participation quoted in Section [2.3.1](/02-scope/2-3-scenarios#admitdischargetransfer-event-notifications-use-cases). and detailed in Section [4.2.2](/04-messaging-requirements/4-2-context-metadata-requirements#xd-metadata-requirements). No specific requirements for format are stipulated for this text.
+3)  Messages SHALL contain **human readable text in the message body that contains the Event Notification information** with at a minimum the elements required by the Conditions of Participation quoted in Section [2.3.1](/02-actors-and-transactions/2-3-scenarios#admitdischargetransfer-event-notifications-use-cases). and detailed in Section [4.2.2](/03-02-transaction-definitions/4-2-context-metadata-requirements#xd-metadata-requirements). No specific requirements for format are stipulated for this text.
 
-Item 2 and 3 MAY be alternatively communicated within an XDM package as detailed in [XDR and XDM for Direct Secure Messaging Specification](https://directtrust.org/standards/the-direct-standard/xdr-xdm-versions). Details about how attachments are formatted within Direct Secure Messages and which actors may be involved can be found in Section [2.4](/02-scope/2-4-roles-and-actors#roles-and-actors) Roles and Actors.
+Item 2 and 3 MAY be alternatively communicated within an XDM package as detailed in [XDR and XDM for Direct Secure Messaging Specification](https://directtrust.org/standards/the-direct-standard/xdr-xdm-versions). Details about how attachments are formatted within Direct Secure Messages and which actors may be involved can be found in Section [2.4](/02-actors-and-transactions/2-4-roles-and-actors#roles-and-actors) Roles and Actors.
 
 ## Data Elements in the Message Payload
 
-See Appendix [5.4](/05-value-sets-and-examples/5-4-data-elements-in-the-message-payload#data-elements-in-the-message-payload)
+See Appendix [5.4](/10-examples/5-4-data-elements-in-the-message-payload#data-elements-in-the-message-payload)
