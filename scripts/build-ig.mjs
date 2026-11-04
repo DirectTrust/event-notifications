@@ -36,8 +36,10 @@ const slugify = (s) => s.toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]
 const ghSlug = (s) => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^\p{L}\p{N}\s_-]/gu, '').trim().replace(/\s/g, '-')
 const yamlStr = (s) => `"${s.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`
 
+// The tempered match keeps one <thead> from reaching across later tables; a plain lazy match swallowed
+// the text between tables (headings and paragraphs) whenever an earlier table had a non-empty body.
 function fixBrokenHeaderTables(md) {
-  return md.replace(/<thead>([\s\S]*?)<\/thead>\s*<tbody>\s*<\/tbody>/g, (m, head) => {
+  return md.replace(/<thead>((?:(?!<\/thead>)[\s\S])*?)<\/thead>\s*<tbody>\s*<\/tbody>/g, (m, head) => {
     const rows = head.match(/<tr>[\s\S]*?<\/tr>/g) || []
     if (rows.length <= 1) return m
     const [h, ...rest] = rows

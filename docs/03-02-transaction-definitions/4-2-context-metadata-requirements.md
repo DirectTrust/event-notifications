@@ -213,8 +213,18 @@ Below is a table showing the required Context Metadata for inclusion in messages
 <td>Populate the Context activity-code with the<br />
 SubmissionSet.contentTypeCode</td>
 </tr>
+</tbody>
+</table>
+
+Implementer guidance for populating the patient element comes directly from the [Context IG](https://directtrust.org/standards/the-direct-standard/context-versions). The information is repeated below for convenience, but the source of these requirements remains in the [Context IG](https://directtrust.org/standards/the-direct-standard/context-versions).
+
+<table style="width:100%;">
+<colgroup>
+<col style="width: 99%" />
+</colgroup>
+<thead>
 <tr>
-<td><p>Constraints included from the <a href="https://directtrust.org/standards/the-direct-standard/context-versions">Context IG</a></p>
+<th><p>Constraints included from the <a href="https://directtrust.org/standards/the-direct-standard/context-versions">Context IG</a></p>
 <p>Both the patient-parameter-name and patient-parameter-value are case insensitive. The patient-parameter-value format is defined based on the patient-parameter-name and MUST NOT contain the “;”, CR, or LF characters. Contiguous whitespace MUST be treated as a single space. Leading and trailing whitespace MUST be ignored. A patient-parameter-name MUST NOT appear more than once in the patient-data-element. When a parameter is included, the following additional requirements apply:</p>
 <ul>
 <li><p>dateOfBirth: MUST be in YYYY-MM-DD or YYYY format (if month/day are unknown).</p></li>
@@ -227,8 +237,10 @@ SubmissionSet.contentTypeCode</td>
 <li><p>country: MUST contain the two-letter ISO 3166 country code. If the country code is omitted, then the other patient matching parameters relating to a location, if any, SHALL be interpreted as identifying a location within the United States of America.</p></li>
 <li><p>directAddress: MUST contain a Direct Address as defined in <a href="https://directtrust.org/standards/the-direct-standard/versions">The Direct Standard®</a>, formatted as an addr-spec as per RFC 5322.</p></li>
 </ul>
-<p>The telephone and directAddress parameters MAY be multivalued. Multiple values SHALL be expressed as a comma-separated list of valid patient-parameter-values.</p></td>
+<p>The telephone and directAddress parameters MAY be multivalued. Multiple values SHALL be expressed as a comma-separated list of valid patient-parameter-values.</p></th>
 </tr>
+</thead>
+<tbody>
 </tbody>
 </table>
 
