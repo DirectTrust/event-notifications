@@ -48,7 +48,7 @@ The following Outpatient events are allowed but not required:
 
 - Transfer between Outpatient Departments within the same organization
 
-These SHALL be communicated in context and coded in LOINC according to the values found in Appendix [5.1.1](/05-value-sets-and-examples/5-1-value-sets-used-in-this-implementation-guide#loinc-codes-for-use-in-context-and-xdm-metadata) of this IG.
+These SHALL be communicated in context and coded in LOINC according to the values found in Appendix [5.1.1](/09-vocabulary/#loinc-codes-for-use-in-context-and-xdm-metadata) of this IG.
 
 Additional information about the details related to a discharge from an inpatient facility represents other scenarios that can be considered a “transfer to another healthcare facility or to another community provider” referenced in the Rule. ADTA02 messages are most frequently used to communicate transfers within the sending facility such as those described above. In order to appropriately communicate about transfers to outside facilities or “External Transfers”, additional information in the PV1-36 (Discharge Disposition) segment must be considered.
 

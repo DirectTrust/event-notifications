@@ -1,5 +1,5 @@
 ---
-title: "1.3 Terms and Symbols"
+title: "Terms"
 ---
 
 # 1.3 Terms and Symbols

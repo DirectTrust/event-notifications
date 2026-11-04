@@ -28,9 +28,9 @@ export default defineConfig({
     siteTitle: false,
 
     nav: [
-      { text: 'Overview', link: '/01-overview/' },
-      { text: 'Messaging Requirements', link: '/04-messaging-requirements/' },
-      { text: 'Value Sets and Examples', link: '/05-value-sets-and-examples/' },
+      { text: 'Use Case Overview', link: '/01-use-case-overview/' },
+      { text: 'Transaction Definitions', link: '/03-02-transaction-definitions/' },
+      { text: 'Vocabulary', link: '/09-vocabulary/' },
       { text: 'DirectTrust Technical Docs Home', link: 'https://directtrust.github.io' }
     ],
 

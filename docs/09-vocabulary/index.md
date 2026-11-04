@@ -1,5 +1,5 @@
 ---
-title: "5.1 Value Sets Used in this Implementation Guide"
+title: "Vocabulary"
 ---
 
 # 5.1 Value Sets Used in this Implementation Guide

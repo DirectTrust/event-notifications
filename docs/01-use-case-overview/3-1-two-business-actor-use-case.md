@@ -4,7 +4,7 @@ title: "3.1 Two Business Actor Use Case"
 
 # 3.1 Two Business Actor Use Case
 
-The Initiating System and its sending HISP will need to communicate the Direct Secure Messages as described in Section [4.1.1.3](/04-messaging-requirements/4-1-message-format-and-payload#required-message-content-payload). Receiving HISPs will communicate with Recipient Systems as needs dictate. Responsibilities for communicating required attachments are shown in the table following.
+The Initiating System and its sending HISP will need to communicate the Direct Secure Messages as described in Section [4.1.1.3](/03-02-transaction-definitions/4-1-message-format-and-payload#required-message-content-payload). Receiving HISPs will communicate with Recipient Systems as needs dictate. Responsibilities for communicating required attachments are shown in the table following.
 
 ![](/images/03-use-cases/3-1-two-business-actor-use-case-1.png)
 

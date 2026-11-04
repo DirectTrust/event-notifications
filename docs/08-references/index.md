@@ -1,5 +1,5 @@
 ---
-title: "1.4 Normative References"
+title: "References"
 ---
 
 # 1.4 Normative References
