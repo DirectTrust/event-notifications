@@ -59,29 +59,19 @@ const releasedTags = tags.filter((t) => isRelease(t.name))
 const workingTags = tags.filter((t) => !isRelease(t.name))
 
 const link = (href, text) => `<a class="vp-raw" href="${href}">${text}</a>`
-const day = (d) => d.toISOString().slice(0, 10)
 
 // "Latest" is whatever main currently is, so name the release it corresponds to: the newest
 // tag reachable from main (the tag on main's head commit when main has not moved past it).
 const MAIN_REF = process.env.MAIN_REF ?? 'origin/main'
 let latest = null
-let latestDate = ''
+let latestTag = null
 try {
   const merged = new Set(run('git', ['tag', '--merged', MAIN_REF]).split('\n').filter(Boolean))
   const t = releasedTags.find((t) => merged.has(t.name)) // tags are sorted newest first
   latest = t?.name ?? null
-  latestDate = t ? day(t.date) : ''
+  latestTag = t ?? null
 } catch (e) {
   console.warn(`generate-history: could not map ${MAIN_REF} to a tag (${e.message.split('\n')[0]})`)
-}
-
-// Develop has no release date, so show when its branch was last modified.
-const DEVELOP_REF = process.env.DEVELOP_REF ?? 'origin/develop'
-let developDate = ''
-try {
-  developDate = day(new Date(run('git', ['log', '-1', '--format=%cI', DEVELOP_REF]).trim()))
-} catch (e) {
-  console.warn(`generate-history: could not read the last commit date of ${DEVELOP_REF} (${e.message.split('\n')[0]})`)
 }
 
 // Release notes are free-form Markdown but live in a single table cell, so flatten them to
@@ -99,7 +89,7 @@ const cell = (md) => {
 }
 
 const row = (t) =>
-  `| ${link(`${SITE_BASE}/${encodeURIComponent(t.name)}/`, `Version ${t.name}`)} | ${day(t.date)} | ${cell(t.description)} |`
+  `| ${link(`${SITE_BASE}/${encodeURIComponent(t.name)}/`, `Version ${t.name}`)} | ${cell(t.description)} |`
 
 const page = `---
 title: Version History
@@ -109,17 +99,17 @@ title: Version History
 
 ## Current and upcoming
 
-| Version | Date | Description |
-|---|---|---|
-| ${link(`${SITE_BASE}/`, latest ? `**Latest (${latest})**` : '**Latest**')} | ${latestDate} | Latest released version${latest ? ` (${latest})` : ''} |
-| ${link(`${SITE_BASE}/develop/`, '**Develop**')} | ${developDate} | Next version in development |
+| Version | Description |
+|---|---|
+| ${link(`${SITE_BASE}/`, latest ? `**Latest (${latest})**` : '**Latest**')} | ${latestTag ? cell(latestTag.description) : 'Latest released version'} |
+| ${link(`${SITE_BASE}/develop/`, '**Develop**')} | Next version in development |
 
 ## Released versions
 
-${releasedTags.length ? `| Version | Date | Change |\n|---|---|---|\n${releasedTags.map(row).join('\n')}\n` : '_No tagged releases yet._\n'}
+${releasedTags.length ? `| Version | Description |\n|---|---|\n${releasedTags.map(row).join('\n')}\n` : '_No tagged releases yet._\n'}
 ## Other working versions
 
-${workingTags.length ? `These versions were never published as releases (for example, Standards for Trial Use).\n\n| Version | Date | Description |\n|---|---|---|\n${workingTags.map(row).join('\n')}\n` : 'None at this time.\n'}`
+${workingTags.length ? `These versions were never published as releases (for example, Standards for Trial Use).\n\n| Version | Description |\n|---|---|\n${workingTags.map(row).join('\n')}\n` : 'None at this time.\n'}`
 
 fs.writeFileSync(out, page)
 console.log(`generate-history: wrote ${path.relative(REPO_ROOT, out)} (${releasedTags.length} released, ${workingTags.length} working; latest = ${latest ?? 'unknown'})`)
