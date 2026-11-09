@@ -53,8 +53,6 @@ The Intermediary System will play two additional technical roles that are in sco
 <td colspan="2"><p>The Initiating or Intermediary System SHALL produce and include a human-readable text attachment.</p>
 <p>SHALL include the human readable text attachment in the Message Body.</p>
 <p>If XDM format, an identical human readable text SHALL be included in the XDM Package</p>
-<p><em>Note: For Document Entry associated with the V2 message classCode SHALL be:</em></p>
-<p><em>2.16.840.1.113883.6.1:86530-3</em></p>
 <p><em>For Document Entry associated with the human readable, classCode may vary to support existing implementations between HISPs and edge systems to define the body message. The preferred value established by this IG is 56444-3 (LOINC), but other guidance may prevail.</em></p></td>
 <td>SHALL assure that the human readable text (from either source) is delivered based upon the needs of the Recipient System</td>
 <td>SHALL display either the included human readable text attachment OR a human readable message constructed from other included data</td>

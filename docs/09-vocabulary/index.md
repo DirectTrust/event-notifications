@@ -176,13 +176,58 @@ title: "Vocabulary"
 | [98144-9](https://loinc.org/98144-9/) | Emergency department Departure notification | ED notification of the departure event |
 | [98145-6](https://loinc.org/98145-6/) | Outpatient Visit notification | Outpatient Visit notification |
 
+The mapping provides explicit guidance showing how the submissionSet.contentTypeCode links to the detailed-level use case and the classCode of the primary DocumentEntry links to the high-level use case. The "primary" DocumentEntry is the DocumentEntry where the DocumentEntry.typeCode equals the SubmissionSet.contentTypeCode.
+
+<table>
+<caption>Specific Metadata Coding Options</caption>
+<thead>
+<tr><th>High-level Endpoint Use Case</th><th>Detail-level Endpoint Use Case</th><th>SubmissionSet.ContentTypeCode</th><th>DocumentEntry.classCode</th><th>DocumentEntry.typeCode</th><th>Display Name</th></tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="8"><strong>adt-notifications</strong></td>
+<td rowspan="2"><strong>admission</strong></td><td rowspan="2"><strong><a href="https://loinc.org/86532-9/">86532-9</a></strong></td><td><a href="https://loinc.org/86530-3/">86530-3</a></td><td><a href="https://loinc.org/86532-9/">86532-9</a></td><td>Admission notification</td></tr>
+<tr><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td>Health Communication</td></tr>
+<tr>
+<td rowspan="2"><strong>discharge</strong></td><td rowspan="2"><strong><a href="https://loinc.org/86531-1/">86531-1</a></strong></td><td><a href="https://loinc.org/86530-3/">86530-3</a></td><td><a href="https://loinc.org/86531-1/">86531-1</a></td><td>Discharge notification</td></tr>
+<tr><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td>Health Communication</td></tr>
+<tr>
+<td rowspan="2"><strong>hospital-admission</strong></td><td rowspan="2"><strong><a href="https://loinc.org/79429-7/">79429-7</a></strong></td><td><a href="https://loinc.org/86530-3/">86530-3</a></td><td><a href="https://loinc.org/79429-7/">79429-7</a></td><td>Hospital Admission notification</td></tr>
+<tr><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td>Health Communication</td></tr>
+<tr>
+<td rowspan="2"><strong>hospital-discharge</strong></td><td rowspan="2"><strong><a href="https://loinc.org/79430-5/">79430-5</a></strong></td><td><a href="https://loinc.org/86530-3/">86530-3</a></td><td><a href="https://loinc.org/79430-5/">79430-5</a></td><td>Hospital Discharge notification</td></tr>
+<tr><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td>Health Communication</td></tr>
+<tr>
+<td rowspan="8"><strong>ed-adt-notifications</strong></td>
+<td rowspan="2"><strong>ed-arrival</strong></td><td rowspan="2"><strong><a href="https://loinc.org/98143-1/">98143-1</a></strong></td><td><a href="https://loinc.org/80110-0/">80110-0</a></td><td><a href="https://loinc.org/98143-1/">98143-1</a></td><td>Emergency department Arrival notification</td></tr>
+<tr><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td>Health Communication</td></tr>
+<tr>
+<td rowspan="2"><strong>ed-admission</strong></td><td rowspan="2"><strong><a href="https://loinc.org/98141-5/">98141-5</a></strong></td><td><a href="https://loinc.org/80110-0/">80110-0</a></td><td><a href="https://loinc.org/98141-5/">98141-5</a></td><td>Emergency department Admission notification</td></tr>
+<tr><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td>Health Communication</td></tr>
+<tr>
+<td rowspan="2"><strong>ed-discharge</strong></td><td rowspan="2"><strong><a href="https://loinc.org/98142-3/">98142-3</a></strong></td><td><a href="https://loinc.org/80110-0/">80110-0</a></td><td><a href="https://loinc.org/98142-3/">98142-3</a></td><td>Emergency department Discharge notification</td></tr>
+<tr><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td>Health Communication</td></tr>
+<tr>
+<td rowspan="2"><strong>ed-departure</strong></td><td rowspan="2"><strong><a href="https://loinc.org/98144-9/">98144-9</a></strong></td><td><a href="https://loinc.org/80110-0/">80110-0</a></td><td><a href="https://loinc.org/98144-9/">98144-9</a></td><td>Emergency department Departure notification</td></tr>
+<tr><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td>Health Communication</td></tr>
+<tr>
+<td rowspan="2"><strong>outpatient-visit-notification</strong></td>
+<td rowspan="2"><strong>outpatient-visit</strong></td><td rowspan="2"><strong><a href="https://loinc.org/98145-6/">98145-6</a></strong></td><td><a href="https://loinc.org/98145-6/">98145-6</a></td><td><a href="https://loinc.org/98145-6/">98145-6</a></td><td>Outpatient Visit notification</td></tr>
+<tr><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td><a href="https://loinc.org/56444-3/">56444-3</a></td><td>Health Communication</td></tr>
+</tbody>
+</table>
+
 **General Guidance:**
 
-In XDM metadata Document Entries include two fields that help systems process the included content: classCode (26) and typeCode (38). The classCode uses very prescriptive LOINC codes that help systems broadly identify what kind of information is included. The typeCode offers more specific information, if it is available, to support more refined workflows. When populating classCodes, initiating systems sharing ADT event notifications conformant to this specification must use very specific LOINC codes:
+In XDM metadata Document Entries include two fields that help systems process the included content: classCode (26) and typeCode (38). The classCode uses very prescriptive LOINC codes that help systems broadly identify what kind of information is included. The typeCode offers more specific information, if it is available, to support more refined workflows. When populating classCodes, initiating systems sharing ADT event notifications conformant to this specification should use these specific LOINC codes:
 
 - [56444-3](https://loinc.org/56444-3/) for the human readable content
 
-- [86530-3](https://loinc.org/86530-3/) for the V2 ADT message
+- [86530-3](https://loinc.org/86530-3/) for the V2 ADT message when the event is a hospital ADT Notification
+
+- [80110-0](https://loinc.org/80110-0/) for the V2 ADT message when the event is an emergency department notification
+
+- [98145-6](https://loinc.org/98145-6/) for the V2 ADT message when the event is an outpatient visit notification
 
 When populating typeCode for the V2 message content, initiating systems should use the most specific LOINC code they are able to apply. If no appropriate code is available for a combination of ADT event type and Patient Class, the initiating system uses the most specific code that would apply. For example, for a notification of admission to a Skilled Nursing facility, use [86532-9](https://loinc.org/86532-9/) (Admission Notification).
 

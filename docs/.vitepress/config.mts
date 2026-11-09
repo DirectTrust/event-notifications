@@ -9,7 +9,7 @@ const BANNER_HEIGHT = '36px'
 
 export default defineConfig({
   title: 'Event Notifications via the Direct Standard',
-  description: 'Event Notifications via the Direct Standard Implementation Guide, built on the DirectTrust Framework for Metadata and Payloads via the Direct Standard(R)',
+  description: 'Event Notifications via the Direct Standard Implementation Guide',
   base: '/event-notifications/',
   cleanUrls: true,
 

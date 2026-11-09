@@ -960,15 +960,15 @@ The ROL segment in this position (following PV1 and the optional PV2 if present)
 </tbody>
 </table>
 
-### Mapping for Context type-code and Metadata (Submission Set) activity-code or (Document Entry) classCode to and from ADT Message Types
+### Mapping for key coded Context IG Elements to Metadata Elements and ADT Message Types
 
 When represented in Context Elements, codes from LOINC use the code system 2.16.840.1.113883.6.1 and a colon (😊 preceding the code).
 
-| **Context type-code (14)** | **Display** | **Metadata (Document Entry) classCode (26)** | **Content for MSH-9.1** |
+| **Context IG type-code (14)** | **Display** | **XD Metadata (Document Entry) classCode (26)** | **Content for MSH-9.1** |
 |----|----|----|----|
 | 86530-3 | Visit notification | 86530-3 | ADT |
 
-Notifications Initiators are encouraged to be as specific as possible when populating this element.
+Notifications Initiators are encouraged to be as specific as possible when populating this element. See mapping table in Appendix [5.1.1](/09-vocabulary/#loinc-codes-for-use-in-context-and-xdm-metadata) for specific Metadata coding options. The Context IG activity-code maps to the XD Metadata DocumentEntry.typeCode.
 
 <table style="width:100%;">
 <colgroup>

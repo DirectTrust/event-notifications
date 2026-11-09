@@ -1,6 +1,6 @@
 # event-notifications
 
-Implementation Guide for **Event Notifications via the Direct Standard®** (ANSI/DS2020-03-101-2025, v1.2), an implementation compliant with the DirectTrust Framework for Metadata and Payloads (see the [metadata-and-payloads-guide](https://directtrust.github.io/metadata-and-payloads-guide/)). Published as a [VitePress](https://vitepress.dev) site at `https://directtrust.github.io/event-notifications/` via GitHub Pages. Layout follows [cc-maternal-health-birth](https://github.com/DirectTrust/cc-maternal-health-birth).
+Implementation Guide for **Event Notifications via the Direct Standard®** (DS2020-03-101-2025, Trial Use Version 1.2.1), which is **not** compliant with the DirectTrust Framework for Metadata and Payloads. Published as a [VitePress](https://vitepress.dev) site at `https://directtrust.github.io/event-notifications/` via GitHub Pages. Layout follows [cc-maternal-health-birth](https://github.com/DirectTrust/cc-maternal-health-birth).
 
 The site is configured with `base: '/event-notifications/'` in `docs/.vitepress/config.mts` — if the repo is renamed, update that value (and the absolute links in `docs/index.md`).
 

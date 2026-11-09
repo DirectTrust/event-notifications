@@ -63,13 +63,12 @@ title: "0.3 Change Log"
 <tr>
 <td>1.2</td>
 <td>03/20/2025</td>
-<td><ol type="1">
-<li><p>Editorial updates throughout the document, including added and updated links and references to other DirectTrust standards (e.g., The Direct Standard® and the Context IG).</p></li>
-<li><p>Section 4.2.1.2 – Updated to include mapping guidance from XD to the Context IG.</p></li>
-<li><p>Section 4.2.1.3 – Updated Context element definitions (Profile).</p></li>
-<li><p>Section 4.2.2.1 – Added mapping guidance for metadata element requirements for SubmissionSet and DocumentEntry.</p></li>
-<li><p>Sections 4.2.3.1 and 4.2.3.2 – Removed; related guidance has been consolidated into Sections 4.2.1.2 and 4.2.2.1.</p></li>
-</ol></td>
+<td>Enhancements to Version 1.1 to be called Version 1.2</td>
+</tr>
+<tr>
+<td>1.2.1</td>
+<td>11/24/2025</td>
+<td>Enhancements to Version 1.2 to be called Version 1.2.1 – Trial Use Version</td>
 </tr>
 </tbody>
 </table>

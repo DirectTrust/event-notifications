@@ -6,11 +6,28 @@ title: "4.1 Message Format and Payload"
 
 The message SHALL be formatted using the MIME or XD message formats described below and specified in this IG. The data payload of each message SHALL include context/metadata information, discrete data in HL7 V2 format, and Human Readable information.
 
-## Context IG and XD Message Formats
+Metadata header variables should be used rather than Including payload metadata coding in the subject field of the message. Coding should not be included in the subject field since it is not an advisable interoperability practice and may jeopardize proper message processing.
 
-SHALL be included in Direct Secure Messages between HISPs and SHALL be communicated via one of the two options outlined below. ![A diagram of a structure Description automatically generated with medium confidence](/images/04-messaging-requirements/4-1-message-format-and-payload-1.png)
+The message MAY include the following header variables to enable easier routing and processing of the message:
+
+| Metadata Element | Cardinality | Binding Strength | Binding Stability | ValueSet (or Fixed Value) |
+|----|----|----|----|----|
+| x-direct-metadata-payload-versionIdentifier | 0..1 | n/a | n/a | 1.0 |
+| x-direct-purposeOfUse | 0..1 | Extensional | Dynamic | <http://terminology.hl7.org/ValueSet/v3-PurposeOfUse><br><br><https://sequoiaproject.org/SequoiaProjectHealthcareDirectoryImplementationGuide/output/ValueSet-RCEPurposeVS.html> |
+| x-direct-useCase | 0...1 | Extensional | Dynamic | The same LOINC code as used in SubmissionSet.contentTypeCode |
+| x-direct-sub-useCase | 0..1 | Extensional | Dynamic | <https://objects.directtrust.org/standards/terminology/codeSystem/ServDescCS.json> |
+| x-direct-metadataTypeCode | 0..1 | Extensional | Dynamic | <http://terminology.hl7.org/ValueSet/v3-HL7FormatCodes> |
+| x-direct-payloadMimeType | 0..* | Extensional | Dynamic | <http://hl7.org/fhir/us/ndh/ValueSet/EndpointFhirMimeTypeVS> |
+
+## Direct Context IG and XD Message Formats
+
+Context SHALL be included in Direct Secure Messages between HISPs and SHALL be communicated via either Context IG or XD Metadata Model. One of the two options outlined below.
 
 Messages SHALL contain information about only one patient and SHALL only communicate information about one event. As a result of these restrictions, only a single HL7 v2 attachment is permitted.
+
+The illustration below provides a conceptual depiction of the Context IG and XD Metadata Models.
+
+![A diagram of a structure Description automatically generated with medium confidence](/images/04-messaging-requirements/4-1-message-format-and-payload-1.png)
 
 ### Message Structure for Context IG Format
 

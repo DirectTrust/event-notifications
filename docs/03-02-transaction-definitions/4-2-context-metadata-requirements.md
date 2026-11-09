@@ -26,7 +26,7 @@ The presence of the X-Direct-Context parameter indicates this IG is conformant t
 
 The MIME body of the conforming Health Content Container SHALL be a MIME multipart container. The *cid-identifier* in the *X-Direct-Context* header SHALL correspond to the value of a *Content-ID* header of the MIME part that contains the Metadata attachment (see Section 2.0 of this document), as per [RFC 2045](https://datatracker.ietf.org/doc/html/rfc2045). The MIME part referenced by the *Content-ID* header SHALL NOT be nested within another MIME multipart container. Only a single context is permitted per message. When multiple attachments are included by a sender, the same context SHALL apply to all attachments.
 
-Below is a table showing the required Context Metadata for inclusion in messages that do not include an XDM payload. Metadata elements that are an extension of the [Context IG](https://directtrust.org/standards/the-direct-standard/context-versions) are defined below and listed in green.
+Below is a table showing the required Context Metadata for inclusion in messages that do not include an XDM payload. Metadata elements that are an extension of the [Direct Context IG](https://directtrust.org/standards/the-direct-standard/context-versions) are defined below and listed in green.
 
 ### Context MIME part Requirements
 
@@ -59,7 +59,7 @@ Below is a table showing the required Context Metadata for inclusion in messages
 <td>(2)</td>
 <td>Content-Type</td>
 <td><p>The mimeType SHALL be text/plain.</p>
-<p>You may include character type encoding. This is specified in section 2 of the <a href="https://directtrust.org/standards/the-direct-standard/context-versions">Context IG</a>. Any standard coding is supported.</p></td>
+<p>You may include character type encoding. This is specified in section 2 of the <a href="https://directtrust.org/standards/the-direct-standard/context-versions">Direct Context IG</a>. Any standard coding is supported.</p></td>
 <td>Fixed Value</td>
 <td>R</td>
 </tr>
@@ -81,7 +81,7 @@ Below is a table showing the required Context Metadata for inclusion in messages
 <td>(5)</td>
 <td>Content-Disposition</td>
 <td><p>attachment; filename=metadata.txt</p>
-<p>Defined in section 2 of the <a href="https://directtrust.org/standards/the-direct-standard/context-versions">Context IG</a>.</p></td>
+<p>Defined in section 2 of the <a href="https://directtrust.org/standards/the-direct-standard/context-versions">Direct Context IG</a>.</p></td>
 <td>Fixed Value</td>
 <td>R</td>
 </tr>
@@ -216,7 +216,7 @@ SubmissionSet.contentTypeCode</td>
 </tbody>
 </table>
 
-Implementer guidance for populating the patient element comes directly from the [Context IG](https://directtrust.org/standards/the-direct-standard/context-versions). The information is repeated below for convenience, but the source of these requirements remains in the [Context IG](https://directtrust.org/standards/the-direct-standard/context-versions).
+Implementer guidance for populating the patient element comes directly from the [Direct Context IG](https://directtrust.org/standards/the-direct-standard/context-versions). The information is repeated below for convenience, but the source of these requirements remains in the [Direct Context IG](https://directtrust.org/standards/the-direct-standard/context-versions).
 
 <table style="width:100%;">
 <colgroup>
@@ -224,7 +224,7 @@ Implementer guidance for populating the patient element comes directly from the 
 </colgroup>
 <thead>
 <tr>
-<th><p>Constraints included from the <a href="https://directtrust.org/standards/the-direct-standard/context-versions">Context IG</a></p>
+<th><p>Constraints included from the <a href="https://directtrust.org/standards/the-direct-standard/context-versions">Direct Context IG</a></p>
 <p>Both the patient-parameter-name and patient-parameter-value are case insensitive. The patient-parameter-value format is defined based on the patient-parameter-name and MUST NOT contain the “;”, CR, or LF characters. Contiguous whitespace MUST be treated as a single space. Leading and trailing whitespace MUST be ignored. A patient-parameter-name MUST NOT appear more than once in the patient-data-element. When a parameter is included, the following additional requirements apply:</p>
 <ul>
 <li><p>dateOfBirth: MUST be in YYYY-MM-DD or YYYY format (if month/day are unknown).</p></li>
@@ -246,7 +246,7 @@ Implementer guidance for populating the patient element comes directly from the 
 
 ### Context Element Definitions (Defined in this IG)
 
-The fields below extend the metadata content define in the [Context IG](https://directtrust.org/standards/the-direct-standard/context-versions).
+The fields below extend the metadata content define in the [Direct Context IG](https://directtrust.org/standards/the-direct-standard/context-versions).
 
 <table>
 <colgroup>
@@ -304,7 +304,7 @@ This chapter describes requirements for the MIME part that contains the XDM pack
 
 ### Metadata Element Requirements
 
-The following list identifies the XD metadata requirements. Mapping Guidance provided only for XD metadata requirements from the [Context IG](https://directtrust.org/standards/the-direct-standard/context-versions). See [XDR and XDM for Direct Secure Messaging Specification](https://directtrust.org/standards/the-direct-standard/xdr-xdm-versions) for all other conversion requirements.
+The following list identifies the XD metadata requirements. Mapping Guidance provided only for XD metadata requirements from the [Direct Context IG](https://directtrust.org/standards/the-direct-standard/context-versions). See [XDR and XDM for Direct Secure Messaging Specification](https://directtrust.org/standards/the-direct-standard/xdr-xdm-versions) for all other conversion requirements.
 
 **Submission Set**
 
@@ -446,8 +446,7 @@ The following list identifies the XD metadata requirements. Mapping Guidance pro
 <tr>
 <td>(26)</td>
 <td>classCode</td>
-<td><p>For Document Entry associated with the V2 message:</p>
-<p>2.16.840.1.113883.6.1:86530-3</p>
+<td><p>For Document Entry associated with the V2 message: See mapping table in section <a href="/09-vocabulary/#loinc-codes-for-use-in-context-and-xdm-metadata">5.1.1</a> for specific metadata coding option</p>
 <p>For Document Entry associated with the human readable, classCode may vary to support existing implementations between HISPs and edge systems to define the body message.</p>
 <p>The preferred value established by this IG is 56444-3 (LOINC), but other guidance may prevail.</p></td>
 <td></td>
@@ -568,3 +567,7 @@ The following list identifies the XD metadata requirements. Mapping Guidance pro
 </tr>
 </tbody>
 </table>
+
+## Mapping Direct Context IG Metadata Elements (i.e. Context Elements) to and from XD Metadata Elements (i.e. Metadata Elements)
+
+The following mapping guidance can be used by a HISP that needs to transform a message’s format from XD to Context IG format or from Context IG to XD format. When transforming from XD to Context IG format there will be information in Metadata Elements that will not be required as Context Elements.
