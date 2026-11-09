@@ -91,9 +91,18 @@ const cell = (md) => {
 const row = (t) =>
   `| ${link(`${SITE_BASE}/${encodeURIComponent(t.name)}/`, `Version ${t.name}`)} | ${cell(t.description)} |`
 
+// Every table gets identical column widths (fixed layout). The style travels with the generated page, and
+// pageClass scopes it to this page, so every build (including archived tags) renders the same way.
 const page = `---
 title: Version History
+pageClass: version-history
 ---
+
+<style>
+.version-history .vp-doc table { display: table; width: 100%; table-layout: fixed; }
+.version-history .vp-doc th:nth-child(1), .version-history .vp-doc td:nth-child(1) { width: 35%; }
+.version-history .vp-doc th:nth-child(2), .version-history .vp-doc td:nth-child(2) { width: 65%; }
+</style>
 
 # Version History
 
