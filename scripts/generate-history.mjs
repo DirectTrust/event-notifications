@@ -4,11 +4,14 @@
 // gitignored.
 //
 //   - "Latest" (main) and "Develop" are always listed, with fixed descriptions.
-//   - Every git tag is a released version. Its description is the body of the GitHub
+//   - Every git tag is listed (see the naming rule below). Its description is the body of the GitHub
 //     release for that tag (fetched with the gh CLI); with no release, it falls back to
 //     the tag's own message.
-//   - "Other working versions" is reserved for tagged working versions that follow a
-//     naming convention we do not have yet, so it is empty for now.
+//   - A tag is a released version only if its name is the standard's identifier,
+//     ANSI-DS<year>-<nn>-<nnn>-<year>
+//     (e.g. ANSI-DS2020-03-101-2025; a tag cannot contain a space, so "ANSI DS..." is hyphenated). Any other tag (e.g. a Standard for
+//     Trial Use such as DS2020-03-101-2025-STU-1.2.1) is an "Other working version": listed
+//     under that heading, never "Latest". Its site build and release notes work like any tag.
 //
 // Usage: node scripts/generate-history.mjs [out-file]   (default docs/version-history.md)
 import { execFileSync } from 'node:child_process'
@@ -50,6 +53,11 @@ const tags = run('git', ['for-each-ref', '--format=%(refname:short)%09%(creatord
   // Newest release first, so the most recent version is at the top of the list.
   .sort((a, b) => b.date - a.date)
 
+// Naming convention for released versions (see header comment); every other tag is a working version.
+const isRelease = (name) => /^ANSI-DS\d{4}-\d{2}-\d{3}-\d{4}$/.test(name)
+const releasedTags = tags.filter((t) => isRelease(t.name))
+const workingTags = tags.filter((t) => !isRelease(t.name))
+
 const link = (href, text) => `<a class="vp-raw" href="${href}">${text}</a>`
 const day = (d) => d.toISOString().slice(0, 10)
 
@@ -60,7 +68,7 @@ let latest = null
 let latestDate = ''
 try {
   const merged = new Set(run('git', ['tag', '--merged', MAIN_REF]).split('\n').filter(Boolean))
-  const t = tags.find((t) => merged.has(t.name)) // tags are sorted newest first
+  const t = releasedTags.find((t) => merged.has(t.name)) // tags are sorted newest first
   latest = t?.name ?? null
   latestDate = t ? day(t.date) : ''
 } catch (e) {
@@ -108,11 +116,10 @@ title: Version History
 
 ## Released versions
 
-${tags.length ? `| Version | Date | Change |\n|---|---|---|\n${tags.map(row).join('\n')}\n` : '_No tagged releases yet._\n'}
+${releasedTags.length ? `| Version | Date | Change |\n|---|---|---|\n${releasedTags.map(row).join('\n')}\n` : '_No tagged releases yet._\n'}
 ## Other working versions
 
-None at this time.
-`
+${workingTags.length ? `These versions were never published as releases (for example, Standards for Trial Use).\n\n| Version | Date | Description |\n|---|---|---|\n${workingTags.map(row).join('\n')}\n` : 'None at this time.\n'}`
 
 fs.writeFileSync(out, page)
-console.log(`generate-history: wrote ${path.relative(REPO_ROOT, out)} (${tags.length} released version${tags.length === 1 ? '' : 's'}; latest = ${latest ?? 'unknown'})`)
+console.log(`generate-history: wrote ${path.relative(REPO_ROOT, out)} (${releasedTags.length} released, ${workingTags.length} working; latest = ${latest ?? 'unknown'})`)
