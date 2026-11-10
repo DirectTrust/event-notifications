@@ -15,6 +15,6 @@ title: Event Notifications via the Direct Standard
   </div>
 </div>
 
-This guide describes a method to communicate patient Event Notifications, such as admissions, discharges and transfers, using Direct Secure Messaging. It is an implementation compliant with the [DirectTrust Metadata and Payloads Framework](https://directtrust.github.io/metadata-and-payloads-guide/).
+This guide describes a method to communicate patient Event Notifications, such as admissions, discharges and transfers, using Direct Secure Messaging. It is an implementation compliant with the [DirectTrust Metadata and Payloads Framework](https://assets.directtrust.org/metadata-and-payloads-guide/).
 
 Start with the [Use Case Overview](/01-use-case-overview/), then see [Actors and Transactions](/02-actors-and-transactions/) and the [Transaction Definitions](/03-02-transaction-definitions/). Terms, references, vocabulary and examples are in [Terms](/06-terms/), [References](/08-references/), [Vocabulary](/09-vocabulary/) and [Examples](/10-examples/). Legal notices, the consensus body and the change log are under [About this Guide](/00-about-this-document/).
